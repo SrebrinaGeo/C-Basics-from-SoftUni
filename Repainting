@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int nylon_SquareMeters, paint_Liters, solvent_Liters, hours;
+    cin >> nylon_SquareMeters >> paint_Liters >> solvent_Liters >> hours;
+
+    const double nylon_Price = 1.50;
+    const double paint_Price = 14.50;
+    const double solvent_Price = 5.00;
+    const double extra_Paint_Percent = 0.10;
+    const double extra_Nylon_SquareMeters = 2.0;
+    const double bags_Price = 0.40;
+    const double work_Price_Percentage = 0.30;
+
+    double total_Nylon_Price = nylon_SquareMeters * nylon_Price;
+    double total_Paint_Price = paint_Liters * paint_Price;
+    double total_Solvent_Price = solvent_Liters * solvent_Price;
+
+    total_Paint_Price *= (1.0 + extra_Paint_Percent);
+    total_Nylon_Price += extra_Nylon_SquareMeters * nylon_Price;
+
+    double total_Materials_Price = total_Nylon_Price + total_Paint_Price + total_Solvent_Price + bags_Price;
+
+    double work_Price_Per_Hour = total_Materials_Price * work_Price_Percentage;
+    double total_Work_Price = hours * work_Price_Per_Hour;
+
+    double total_Cost = total_Materials_Price + total_Work_Price;
+
+    cout << total_Cost << endl;
+
+    return 0;
+}
