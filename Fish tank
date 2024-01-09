@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    int length, width, height;
+    cin >> length >> width >> height;
+
+    double occupied_Area_Percentage;
+    cin >> occupied_Area_Percentage;
+
+    int volume_Acquarium_Cubic_Cm = length * width * height;
+    double volume_In_Liters = volume_Acquarium_Cubic_Cm / 1000.0;
+
+    double occupied_Volume_Liters = volume_In_Liters * (occupied_Area_Percentage / 100.0);
+
+    double liters_Needed = volume_In_Liters - occupied_Volume_Liters;
+
+    cout << fixed << setprecision(5) << liters_Needed << endl;
+
+    return 0;
+}
