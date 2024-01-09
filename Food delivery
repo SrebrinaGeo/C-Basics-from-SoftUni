@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    int chicken_Menu, fish_Menu, veggie_Menu;
+    cin >> chicken_Menu >> fish_Menu >> veggie_Menu;
+
+    const double chicken_Menu_Price = 10.35;
+    const double fish_Menu_Price = 12.40;
+    const double veggie_Menu_Price = 8.15;
+    const double delivery = 2.50;
+
+    double total_Chicken_Price = chicken_Menu * chicken_Menu_Price;
+    double total_Fish_Price = fish_Menu * fish_Menu_Price;
+    double total_Veggie_Price = veggie_Menu * veggie_Menu_Price;
+    double total_Sum_Menus = total_Chicken_Price + total_Fish_Price + total_Veggie_Price;
+    double dessert_Price = total_Sum_Menus * 0.2;
+
+    double final_Price = total_Sum_Menus + dessert_Price + delivery;
+
+    cout << final_Price << endl;
+
+    return 0;
+}
