@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+using namespace std; 
+
+int main() 
+{
+int pens_Count;
+cin >> pens_Count;
+
+int markers_Count;
+cin >> markers_Count;
+
+int liters;
+cin >> liters;
+
+int percentage;
+cin >> percentage;
+
+double pens_Sum = pens_Count * 5.80;
+double markers_Sum = markers_Count * 7.20;
+double liters_Sum = liters * 1.20;
+double sum = pens_Sum + markers_Sum + liters_Sum;
+double discount = sum * (static_cast<double>(percentage) / 100);
+
+double total_Sum = sum - discount;
+
+cout << total_Sum << endl;
+return 0;
+}
