@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    int basketball_Lessons_Tax;
+    cin >> basketball_Lessons_Tax;
+
+    const double sneakers_Price = basketball_Lessons_Tax * 0.6;
+    const double clothes_Price = sneakers_Price * 0.8;
+    const double ball_Price = clothes_Price * 0.25;
+    const double accessories_Price = ball_Price * 0.2;
+
+    double total_Equipment_Sum = sneakers_Price + clothes_Price + ball_Price + accessories_Price;
+
+    double total_Sum = total_Equipment_Sum + basketball_Lessons_Tax;
+
+    cout << total_Sum << endl;
+
+    return 0;
+}
