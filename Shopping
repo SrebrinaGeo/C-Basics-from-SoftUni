@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double budget;
+	cin >> budget;
+
+	int videocardCount, cpuCount, ramCount;
+	cin >> videocardCount >> cpuCount >> ramCount;
+
+	double videocardsSum = videocardCount * 250;
+	double cpusSum = cpuCount * (videocardsSum * 0.35);
+	double ramSum = ramCount * (videocardsSum * 0.1);
+
+	double totalSum = videocardsSum + cpusSum + ramSum;
+
+
+	if (videocardCount > cpuCount)
+	{
+		totalSum -= (totalSum * 0.15);
+	}
+
+
+	if (totalSum <= budget)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "You have " << budget - totalSum << " leva left!" << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Not enough money! You need " << totalSum - budget << " leva more!" << endl;
+	}
+}
