@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double record_InSeconds, distance_InMeters, time_ForMeter;
+	cin >> record_InSeconds >> distance_InMeters >> time_ForMeter;
+
+	double time_PerDistance = distance_InMeters * time_ForMeter;
+	double resistance_Count = floor(distance_InMeters / 15);
+	double additionalTime = resistance_Count * 12.5;
+	double total_time = time_PerDistance + additionalTime;
+
+	if (total_time < record_InSeconds)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Yes, he succeeded! " << "The new world record is " << total_time << " seconds." << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "No, he failed! He was " << total_time - record_InSeconds << " seconds slower." << endl;
+	}
+}
