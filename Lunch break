@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string movie;
+	getline(cin, movie);
+
+
+	int episodeLength, breakLength;
+	cin >> episodeLength >> breakLength;
+
+	double lunchTime = breakLength * 0.125;
+	double restTime = breakLength * 0.25;
+	
+	double breakActivitiesTime = lunchTime + restTime + episodeLength;
+
+	double timeLeft = breakLength - breakActivitiesTime;
+
+
+	if (breakActivitiesTime <= breakLength)
+	{
+		cout << "You have enough time to watch " << movie << " and left with " << ceil(breakLength - breakActivitiesTime) << " minutes free time." << endl;
+	}
+
+	else
+	{
+		cout << "You don't have enough time to watch " << movie << ", you need " << ceil(breakActivitiesTime - breakLength) << " more minutes." << endl;
+	}
+	return 0;
+}
