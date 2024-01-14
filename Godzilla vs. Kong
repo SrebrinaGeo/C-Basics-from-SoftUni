@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double budget;
+	cin >> budget;
+
+	int extras;
+	cin >> extras;
+	
+	double clothes;
+	cin >> clothes;
+
+	double set_Sum = budget * 0.1;
+	double sum_costumes = (extras * clothes);
+
+	if (extras > 150)
+	{
+		sum_costumes -= sum_costumes * 0.1;
+	}
+
+	double totalSum = sum_costumes + set_Sum;
+
+	if (totalSum > budget)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Not enough money!" << endl;
+		cout << "Wingard needs " << totalSum - budget << " leva more." << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout <<  "Action!" << endl;
+		cout << "Wingard starts filming with " << budget - totalSum << " leva left." << endl;
+	}
+	return 0;
+}
