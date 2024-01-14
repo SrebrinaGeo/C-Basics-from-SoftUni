@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double holiday_Price;
+	cin >> holiday_Price;
+
+	int puzzles, dolls, teddies, minions, trucks;
+	cin >> puzzles >> dolls >> teddies >> minions >> trucks;
+
+	int countToys = puzzles + dolls + teddies + minions + trucks;
+
+	double puzzlesSum = puzzles * 2.6;
+	double dollsSum = dolls * 3.0;	
+	double teddiesSum = teddies * 4.1;
+	double minionsSum = minions * 8.2;
+	double trucksSum = trucks * 2.0;
+
+	double toysTotalSum = puzzlesSum + dollsSum + teddiesSum + minionsSum + trucksSum;
+
+	if (countToys >= 50)
+	{
+		toysTotalSum -= toysTotalSum * 0.25;
+	}
+
+	double profitleft = toysTotalSum -= toysTotalSum * 0.1;
+
+	if (profitLeft >= holiday_Price)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Yes! " << profitleft - holiday_Price << " lv left." << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Not enough money! " << holiday_Price - profitleft << " lv needed." << endl;
+	}
+	return 0;
+}
