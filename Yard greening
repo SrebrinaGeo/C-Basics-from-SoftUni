@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
+int main() 
+{
+double sq_Meters;;
+cin >> sq_Meters;
+
+double sum = sq_Meters * 7.61;
+double discount = 0.18 * sum;
+double discount_Price = sum - discount;
+
+cout << "The final price is: " << discount_Price << " lv.\n"
+<< "The discount is: " << discount << " lv.";
+return 0;
+}
