@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
+int main() 
+{
+int dog_Food;
+int cat_Food;
+
+cin >> dog_Food;
+cin >> cat_Food;
+
+double sum = (dog_Food * 2.50) + (cat_Food * 4);
+
+cout << sum << " lv.";
+return 0;
+}
