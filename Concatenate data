@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
+int main() 
+{
+string name;
+string family_Name;
+int age;
+string city;
+
+cin >> name;
+cin >> family_Name;
+cin >> age;
+cin >> city;
+
+cout << "You are " << name << " " << family_Name << ", a " << age << "-years old person from " << city << ".";
+return 0;
+}
