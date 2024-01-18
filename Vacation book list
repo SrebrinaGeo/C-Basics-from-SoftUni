@@ -1,0 +1,21 @@
+#include <iostream>
+#include <math.h>
+using namespace std; 
+
+int main() 
+{
+int pages_Current_Book;
+cin >> pages_Current_Book;
+
+int pages_Per_Hour;
+cin >> pages_Per_Hour;
+
+int days;
+cin >> days;
+
+int hours_Per_Book = pages_Current_Book/pages_Per_Hour;
+int hours_Per_Day = hours_Per_Book/days;
+
+cout << hours_Per_Day << endl;
+return 0;
+}
