@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int hour; cin >> hour;
+	string day; cin >> day;
+
+	if (day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday" || day == "Friday" || day == "Saturday")
+	{
+		if ((hour >= 0 && hour <= 9) || (hour >= 18 && hour <= 23))
+		{
+			cout << "closed" << endl;
+		}
+
+		else if (hour >= 10 && hour <= 17)
+		{
+			cout << "open" << endl;
+		}
+	}
+
+	else if (day == "Sunday")
+	{
+		cout << "closed" << endl;
+	}
+	return 0;
+}
