@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	string projection; cin >> projection;
+	int rows, columns; cin >> rows >> columns;
+	int seats = 1;
+	double price = 0.00;
+
+
+	if (projection == "Premiere")
+	{
+		price = 12.00;
+	}
+
+	else if (projection == "Normal")
+	{
+		price = 7.50;
+	}
+
+	else if (projection == "Discount")
+	{
+		price = 5.00;
+	}
+		
+	
+	cout.setf(ios::fixed);
+	cout.precision(2);
+	cout << (rows * columns) * price << " leva" << endl;
+
+
+	return 0;
+}
