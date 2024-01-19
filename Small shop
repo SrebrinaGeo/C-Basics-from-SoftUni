@@ -1,0 +1,84 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	string product, city; cin >> product >> city;
+	double amount; cin >> amount;
+
+	if (city == "Sofia")
+	{
+		if (product == "coffee")
+		{
+			cout << amount * 0.5 << endl;
+		}
+		else if (product == "water")
+		{
+			cout << amount * 0.8 << endl;
+		}
+		else if (product == "beer")
+		{
+			cout << amount * 1.2 << endl;
+		}
+		else if (product == "sweets")
+		{
+			cout << amount * 1.45 << endl;
+		}
+		else if (product == "peanuts")
+		{
+			cout << amount * 1.6 << endl;
+		}
+	}
+
+	else if (city == "Plovdiv")
+	{
+		if (product == "coffee")
+		{
+			cout << amount * 0.4 << endl;
+		}
+		else if (product == "water")
+		{
+			cout << amount * 0.7 << endl;
+		}
+		else if (product == "beer")
+		{
+			cout << amount * 1.15 << endl;
+		}
+		else if (product == "sweets")
+		{
+			cout << amount * 1.3 << endl;
+		}
+		else if (product == "peanuts")
+		{
+			cout << amount * 1.5 << endl;
+		}
+	}
+
+	else if (city == "Varna")
+	{
+		if (product == "coffee")
+		{
+			cout << amount * 0.45 << endl;
+		}
+		else if (product == "water")
+		{
+			cout << amount * 0.7 << endl;
+		}
+		else if (product == "beer")
+		{
+			cout << amount * 1.1 << endl;
+		}
+		else if (product == "sweets")
+		{
+			cout << amount * 1.35 << endl;
+		}
+		else if (product == "peanuts")
+		{
+			cout << amount * 1.55 << endl;
+		}
+	}
+	return 0;
+}
+
+
