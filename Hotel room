@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string month, type; cin >> month;
+    int nights; cin >> nights;
+    double sumStudio = 0.0, sumApartment = 0.0;
+
+
+    if (month == "May" || month == "October")
+    {
+        double studioPrice = 50.0;
+        double apartmentPrice = 65;
+
+        if (nights > 7 && nights <= 14)
+        {
+            double discount = 0.05;
+            sumStudio = nights * studioPrice;
+            sumStudio -= (sumStudio * discount);
+            sumApartment = nights * apartmentPrice;
+        }
+
+        else if (nights > 14)
+        {
+            double discount = 0.3;
+            sumStudio = nights * studioPrice;
+            sumStudio -= (sumStudio * discount);
+
+            double discountAp = 0.1;
+            sumApartment = nights * apartmentPrice;
+            sumApartment -= (sumApartment * discountAp);
+            
+        }
+
+        else
+        {
+            sumStudio = nights * studioPrice;
+            sumApartment = nights * apartmentPrice;
+
+        }
+}
+
+    else if (month == "June" || month == "September")
+    {
+        double studioPrice = 75.2;
+        double apartmentPrice = 68.7;
+
+        if (nights > 14)
+        {
+            double discount = 0.2;
+            sumStudio = nights * studioPrice;
+            sumStudio -= (sumStudio * discount);
+
+            double discountAp = 0.1;
+            sumApartment = nights * apartmentPrice;
+            sumApartment -= (sumApartment * discountAp);
+        }
+
+        else
+        {
+            sumStudio = nights * studioPrice;
+            sumApartment = nights * apartmentPrice;
+        }
+    }
+
+    else if (month == "July" || month == "August")
+    {
+        double studioPrice = 76.0;
+        double apartmentPrice = 77.0;
+
+        if (nights > 14)
+        {
+           double discountAp = 0.1;
+           sumApartment = nights * apartmentPrice;
+           sumApartment -= (sumApartment * discountAp);
+           sumStudio = nights * studioPrice;
+        }
+
+        else
+        {
+            sumStudio = nights * studioPrice;
+            sumApartment = nights * apartmentPrice;
+        }
+    }
+
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    cout << "Apartment: " << sumApartment << " lv." << endl;
+    cout << "Studio: " << sumStudio << " lv." << endl;
+
+	return 0;
+}
