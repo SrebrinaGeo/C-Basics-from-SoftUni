@@ -1,0 +1,79 @@
+#include <iostream>
+#include<string>;
+using namespace std;
+
+int main()
+{
+    int days;
+    string room, rate;
+
+    cin >> days;
+
+    getline(cin >> ws, room);
+    getline(cin, rate);
+
+    double price;
+    int nights = days - 1;
+
+    if (room == "room for one person")
+    {
+        price = nights * 18.00;
+    }
+
+    else if (room == "apartment")
+    {
+        price = nights * 25;
+        if (days < 10)
+        {
+            price *=  0.7;
+        }
+
+        else if (days <= 15)
+        {
+            price *=  0.65;
+        }
+
+        else
+        {
+            price *= 0.5;
+        }
+    }
+
+    else if (room == "president apartment")
+    {
+        price = nights * 35;
+        if (days < 10)
+        {
+           price *=  0.9;  
+        }
+
+        else if (days <= 15)
+        {
+            price *=  0.85;
+        }
+
+        else if (days > 15)
+        {
+            price *=  0.8;
+        }
+    }
+
+    if (rate == "positive")
+    {
+        price = price * 1.25;
+    }
+
+    else if (rate == "negative")
+    {
+        price = price * 0.9;
+    }
+
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    cout << price << endl;
+
+	return 0;
+}
+
+
