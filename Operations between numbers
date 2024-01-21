@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    cin >> num1 >> num2;
+    char symbol;
+    cin >> symbol;
+
+    if (symbol == '+')
+    {
+        int sum = num1 + num2;
+        string type = (sum % 2 == 0) ? "even" : "odd";
+        cout << num1 << " + " << num2 << " = " << sum << " - " << type << endl;
+    }
+
+    else if (symbol == '-')
+    {
+        int sum = num1 - num2;
+        string type = (sum % 2 == 0) ? "even" : "odd";
+        cout << num1 << " - " << num2 << " = " << sum << " - " << type << endl;
+    }
+
+    else if (symbol == '*')
+    {
+        int sum = num1 * num2;
+        string type = (sum % 2 == 0) ? "even" : "odd";
+        cout << num1 << " * " << num2 << " = " << sum << " - " << type << endl;
+    }
+
+    else if (symbol == '/')
+    {
+        if (num2 == 0)
+        {
+            cout << "Cannot divide " << num1 << " by zero" << endl;
+        }
+        else
+        {
+            double sum = static_cast<double>(num1) / num2;
+            cout.setf(ios::fixed);
+            cout.precision(2);
+            cout << num1 << " / " << num2 << " = " << sum << endl;
+        }
+    }
+
+    else if (symbol == '%')
+    {
+        if (num2 == 0)
+        {
+            cout << "Cannot divide " << num1 << " by zero" << endl;
+        }
+        else
+        {
+            int sum = num1 % num2;
+            cout << num1 << " % " << num2 << " = " << sum << endl;
+        }
+    }
+
+	return 0;
+}
