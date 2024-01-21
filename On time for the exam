@@ -1,0 +1,60 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	int hourExam, minutesExam, hourArrival, minutesArrival;
+	cin >> hourExam >> minutesExam >> hourArrival >> minutesArrival;
+
+    int sumMinutesExam = (hourExam * 60) + minutesExam;
+    int sumMinutesArrival = (hourArrival * 60) + minutesArrival;
+    int diff = abs(sumMinutesArrival - sumMinutesExam);
+
+    if (sumMinutesArrival > sumMinutesExam)
+    {
+        cout << "Late" << endl;
+        if (diff >= 60)
+        {
+            int hour = diff / 60;
+            int minutes = diff % 60;
+            cout.setf(ios::fixed);
+            cout.precision(2);
+            cout << hour << ":" << std::setw(2) << std::setfill('0') << minutes << " hours after the start" << endl;
+        }
+
+        else
+        {
+            cout << diff << " minutes after the start" << endl;
+        }
+    }
+
+    else if (sumMinutesArrival == sumMinutesExam || diff <= 30)
+    {
+        cout << "On time" << endl;
+        if (diff > 0)
+        {
+            cout << diff << " minutes before the start" << endl;
+        }
+    }
+
+
+    else
+    {
+        cout << "Early" << endl;
+        if (diff >= 60)
+        {
+            int hour = diff / 60;
+            int minutes = diff % 60;
+            cout.setf(ios::fixed);
+            cout.precision(2);
+            cout << hour << ":" << std::setw(2) << std::setfill('0') << minutes << " hours before the start" << endl;
+        }
+
+        else
+        {
+            cout << diff << " minutes before the start" << endl;
+        }
+    }
+    
+}
