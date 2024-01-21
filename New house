@@ -1,0 +1,96 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	string flower; cin >> flower;
+	int countFlowers, budget; cin >> countFlowers >> budget;
+	double sum;
+
+	if (flower == "Roses")
+	{
+		if (countFlowers > 80)
+		{
+			sum = countFlowers * 5;
+			sum -= (sum * 0.1);
+		}
+
+		else
+		{
+			sum = countFlowers * 5;
+		}
+
+	}
+
+	else if (flower == "Dahlias")
+	{
+		if (countFlowers > 90)
+		{
+			sum = countFlowers * 3.8;
+			sum -= (sum * 0.15);
+		}
+
+		else
+		{
+			sum = countFlowers * 3.8;
+		}
+	}
+
+	else if (flower == "Tulips")
+	{
+		if (countFlowers > 80)
+		{
+			sum = countFlowers * 2.8;
+			sum -= (sum * 0.15);
+		}
+
+		else
+		{
+			sum = countFlowers * 2.8;
+		}
+	}
+
+	else if (flower == "Narcissus")
+	{
+		if (countFlowers < 120)
+		{
+			sum = countFlowers * 3;
+			sum += (sum * 0.15);
+		}
+
+		else
+		{
+			sum = countFlowers * 3;
+		}
+	}
+
+	else if (flower == "Gladiolus")
+	{
+		if (countFlowers < 80)
+		{
+			sum = countFlowers * 2.5;
+			sum += (sum * 0.2);
+		}
+
+		else
+		{
+			sum = countFlowers * 2.5;
+		}
+	}
+		
+	if (budget >= sum)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Hey, you have a great garden with " << countFlowers<< " " << flower << " and " << budget - sum << " leva left." << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Not enough money, you need " << sum - budget << " leva more." << endl;
+	}
+
+	return 0;
+}
