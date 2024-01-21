@@ -1,0 +1,162 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	
+	int budget; cin >> budget;
+	string season; cin >> season;
+	int fishermen; cin >> fishermen;
+	double sum;
+
+	if (season == "Spring")
+	{
+		int rentBoat = 3000;
+
+		if (fishermen > 0 && fishermen <= 6)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+				sum -= sum * 0.05;
+ 			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+			}
+		}
+
+		else if (fishermen <= 11)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+			}
+		}
+
+		else if (fishermen >= 12)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+			}
+		}
+
+	}
+
+	else if (season == "Summer" || season == "Autumn")
+	{
+		int rentBoat = 4200;
+
+		if (fishermen > 0 && fishermen <= 6)
+		{
+			if (fishermen % 2 == 0 && season != "Autumn")
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+			}
+		}
+
+		else if (fishermen <= 11)
+		{
+			if (fishermen % 2 == 0 && season != "Autumn")
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+			}
+		}
+
+		else if (fishermen >= 12)
+		{
+			if (fishermen % 2 == 0 && season != "Autumn")
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+			}
+		}
+	}
+
+	else if (season == "Winter")
+	{
+
+		int rentBoat = 2600;
+
+		if (fishermen > 0 && fishermen <= 6)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.1);
+			}
+		}
+
+		else if (fishermen <= 11)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.15);
+			}
+		}
+
+		else if (fishermen >= 12)
+		{
+			if (fishermen % 2 == 0)
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+				sum -= sum * 0.05;
+			}
+			else
+			{
+				sum = rentBoat - (rentBoat * 0.25);
+			}
+		}
+	}
+
+		
+	if (budget >= sum)
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Yes! You have " << budget - sum << " leva left." << endl;
+	}
+
+	else
+	{
+		cout.setf(ios::fixed);
+		cout.precision(2);
+		cout << "Not enough money! You need " << sum - budget << " leva." << endl;
+	}
+
+	return 0;
+}
