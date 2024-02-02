@@ -1,0 +1,34 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main()
+{
+	int n; cin >> n;
+	int biggest = INT_MIN;
+	int sum = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		int num; cin >> num;
+		sum += num;
+
+		if (num > biggest)
+		{
+			biggest = num;
+		}
+	}
+	sum -= biggest;
+
+	if (sum == biggest)
+	{
+		cout << "Yes" << endl << "Sum = " << biggest << endl;
+	}
+	else
+	{
+		int diff = abs(biggest - sum);
+		cout << "No" << endl << "Diff = " << diff << endl;
+	}
+
+	return 0;
+}
