@@ -1,0 +1,25 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    cin >> n;
+
+    int maxNumber = INT_MIN;
+    int minNumber = INT_MAX;
+     for (int number = 1; number <= n; number++) {
+        int num;
+        cin >> num;
+
+        if (num > maxNumber) {
+            maxNumber = num;
+        }
+        if (num < minNumber) {
+            minNumber = num;
+        }  
+     }
+
+     cout << "Max number: " << maxNumber << endl << "Min number: " << minNumber << endl;
+}
