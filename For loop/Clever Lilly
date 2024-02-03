@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age, toyPrice; 
+    double washPrice; 
+    double collectedMoney = 0.0;
+    double toysMoney = 0.0;
+    cin >> age >> washPrice >> toyPrice;
+
+    for (int i = 1; i <= age; i++)
+    {
+        if (i % 2 == 0)
+        {
+            collectedMoney += ((i * 5) - 1);
+        }
+        else if (i % 2 != 0)
+        {
+            toysMoney += toyPrice;
+        }
+    }
+
+    collectedMoney += toysMoney;
+
+    if (collectedMoney >= washPrice)
+    {
+        double diff = collectedMoney - washPrice;
+        cout.setf(ios::fixed);
+        cout.precision(2);
+        cout << "Yes! " << diff << endl;
+    }
+    else
+    {
+        double diff = washPrice - collectedMoney;
+        cout.setf(ios::fixed);
+        cout.precision(2);
+        cout << "No! " << diff << endl;
+    }
+    return 0;
+}
