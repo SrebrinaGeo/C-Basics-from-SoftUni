@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string actorName;
+    double academyPoints;
+    int numJudges;
+
+    getline(cin, actorName);
+    cin >> academyPoints >> numJudges;
+
+    double totalPoints = academyPoints;
+
+    for (int i = 1; i <= numJudges; i++)
+    {
+        string judgeName;
+        double judgePoints;
+
+        cin.ignore();
+        getline(cin, judgeName);
+        cin >> judgePoints;
+
+        totalPoints += (judgeName.length() * judgePoints) / 2;
+
+        if (totalPoints >= 1250.5)
+        {
+            cout.setf(ios::fixed);
+            cout.precision(1)
+            cout << "Congratulations, " << actorName << " got a nominee for leading role with " << totalPoints << "!" << endl;
+            return 0;
+        }
+    }
+
+    double neededPoints = 1250.5 - totalPoints;
+    cout.setf(ios::fixed);
+    cout.precision(1);
+    cout << "Sorry, " << actorName << " you need " << neededPoints << " more!" << endl;
+
+    return 0;
+}
