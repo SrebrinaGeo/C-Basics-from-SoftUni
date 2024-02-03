@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int tournaments, initialPoints;
+    cin >> tournaments >> initialPoints;
+    int pointsTourn = 0;
+    int winsCount = 0;
+
+    for (int i = 0; i < tournaments; i++)
+    {
+        string stage;
+        cin >> stage;
+
+        if (stage == "W")
+        {
+            winsCount ++;
+            pointsTourn += 2000;
+        }
+        else if (stage == "F")
+        {
+            pointsTourn += 1200;
+        }
+        else if (stage == "SF")
+        {
+            pointsTourn += 720;
+        }
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    cout << "Final points: " << initialPoints + pointsTourn << endl;
+    cout << "Average points: " << pointsTourn / tournaments << endl;
+    cout << (100.0 * winsCount) / tournaments << "%" << endl;
+
+    return 0;
+}
