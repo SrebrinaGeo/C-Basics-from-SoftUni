@@ -1,0 +1,57 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int groups;
+    cin >> groups;
+    double percentage = 0.0;
+    int totalPeople = 0;
+    int groupMusala = 0, groupMonblanc = 0, groupKilim = 0, groupK2 = 0, groupEverest = 0;
+
+    for (int i = 1; i <= groups; i++)
+    {
+        int people;
+        cin >> people;
+        totalPeople += people;
+
+        if (people <= 5)
+        {
+            groupMusala += people;
+        }
+        else if (people <= 12)
+        {
+            groupMonblanc += people;
+        }
+        else if (people <= 25)
+        {
+            groupKilim += people;
+        }
+        else if (people <= 40)
+        {
+            groupK2 += people;
+        }
+        else if (people >= 41)
+        {
+            groupEverest += people;
+        }
+    }
+
+    percentage = static_cast<double>(groupMusala) / totalPeople * 100;
+    cout << fixed << setprecision(2) << percentage << "%" << endl;
+
+    percentage = static_cast<double>(groupMonblanc) / totalPeople * 100;
+    cout << fixed << setprecision(2) << percentage << "%" << endl;
+
+    percentage = static_cast<double>(groupKilim) / totalPeople * 100;
+    cout << fixed << setprecision(2) << percentage << "%" << endl;
+
+    percentage = static_cast<double>(groupK2) / totalPeople * 100;
+    cout << fixed << setprecision(2) << percentage << "%" << endl;
+
+    percentage = static_cast<double>(groupEverest) / totalPeople * 100;
+    cout << fixed << setprecision(2) << percentage << "%" << endl;
+
+    return 0;
+}
