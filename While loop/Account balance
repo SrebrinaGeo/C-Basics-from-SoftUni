@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	cout.setf(ios::fixed);
+	cout.precision(2);
+	
+	string input;
+	cin >> input;
+	double balance = 0.0;
+	
+
+	while (input != "NoMoreMoney")
+	{
+		double sum = stod(input);
+
+		//cout << "Increase: " << sum << endl;
+		
+
+		if (sum < 0)
+		{
+			cout << "Invalid operation!" << endl;
+			break;
+		}
+		
+		else
+		{
+			cout << "Increase: " << sum << endl;
+			balance += sum;
+		}
+
+		cin >> input;
+	}
+
+	cout << "Total: " << balance << endl;
+	return 0;
+}
