@@ -1,0 +1,47 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int badGradesLimit;
+    cin >> badGradesLimit;
+    cin.ignore();
+
+    int counterBad = 0;
+    double sumGrades = 0.0;
+    int counterGrades = 0;
+    string lastProblem;
+
+    string task;
+    while (counterBad < badGradesLimit && getline(cin, task) && task != "Enough")
+    {
+        int grade;
+        cin >> grade;
+
+        sumGrades += grade;
+        counterGrades++;
+        lastProblem = task;
+
+        if (grade <= 4)
+        {
+            counterBad++;
+        }
+        cin.ignore();
+    }
+
+    if (counterBad == badGradesLimit)
+    {
+        cout << "You need a break, " << counterBad << " poor grades." << endl;
+    }
+    else
+    {
+        cout << fixed << setprecision(2);
+        cout << "Average score: " << sumGrades / counterGrades << endl;
+        cout << "Number of problems: " << counterGrades << endl;
+        cout << "Last problem: " << lastProblem << endl;
+    }
+
+    return 0;
+}
