@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <climits>
+using namespace std;
+
+int main()
+{
+	string input;
+	cin >> input;
+	int maximum = INT_MIN;
+
+	while (input != "Stop")
+	{
+		int number = stoi(input);
+
+		if (number > maximum)
+		{
+			maximum = number;
+		}
+		cin >> input;
+	}
+
+	cout << maximum << endl;
+	return 0;
+}
