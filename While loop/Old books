@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string favBook;
+    getline(cin, favBook);
+
+    int counter = 0;
+    bool bookFound = false;
+    string currentBook;
+
+    while (getline(cin, currentBook) && currentBook != "No More Books")
+    {
+        if (currentBook == favBook)
+        {
+            bookFound = true;
+            break;
+        }
+        counter++;
+    }
+
+    if (bookFound)
+    {
+        cout << "You checked " << counter << " books and found it." << endl;
+    }
+    else
+    {
+        cout << "The book you search is not here!" << endl;
+        cout << "You checked " << counter << " books." << endl;
+    }
+
+    return 0;
+}
