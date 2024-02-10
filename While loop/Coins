@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    double change;
+    cin >> change;
+
+    int coinsChange = static_cast<int>(change * 100);
+    int count = 0;
+
+    while (coinsChange > 0)
+    {
+        if (coinsChange >= 200) coinsChange -= 200;
+        else if (coinsChange >= 100) coinsChange -= 100;
+        else if (coinsChange >= 50) coinsChange -= 50;
+        else if (coinsChange >= 20) coinsChange -= 20;
+        else if (coinsChange >= 10) coinsChange -= 10;
+        else if (coinsChange >= 5) coinsChange -= 5;
+        else if (coinsChange >= 2) coinsChange -= 2;
+        else if (coinsChange >= 1) coinsChange -= 1;
+
+        count++;
+    }
+    cout << count << endl;
+    return 0;
+}
