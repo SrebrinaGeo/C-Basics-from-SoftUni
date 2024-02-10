@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <cstdlib> 
+using namespace std;
+
+main()
+
+{
+	int width, height;
+	cin >> width >> height >> ws;
+
+	int pieces = height * width;
+	bool isEnough = true;
+
+	string input;
+
+	while (getline(cin, input) && input != "STOP")
+	{
+		int currentPieces = stoi(input);
+
+		pieces -= currentPieces;
+		if (pieces < 0)
+		{
+			isEnough = false;
+			break;
+		}
+	}
+
+	if (isEnough)
+	{
+		cout << pieces << " pieces are left." << endl;
+	}
+
+	else 
+	{
+		cout << "No more cake left! You need " << abs(pieces) << " pieces more." << endl;
+	}
+	
+	return 0;
+}
