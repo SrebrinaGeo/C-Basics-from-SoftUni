@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <cstdlib> 
+using namespace std;
+
+main()
+
+{
+	int width, length, height;
+	cin >> width >> length >> height >> ws;
+	int freeSpace = width * length * height;
+
+	string input;
+
+	while (getline(cin, input) && input != "Done")
+	{
+		int boxes = stoi(input);
+
+		freeSpace -= boxes;
+		if (freeSpace < 0)
+		{
+			break;
+		}
+	}
+
+	if (freeSpace < 0)
+	{
+		cout << "No more free space! You need " << abs(freeSpace) << " Cubic meters more." << endl;
+	}
+
+	else
+	{
+		cout << freeSpace << " Cubic meters left." << endl;
+	}
+	
+	return 0;
+}
