@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    double holidaySum, currentMoney;
+    cin >> holidaySum >> currentMoney;
+    int daysCounter = 0;
+    int spentCounter = 0;
+    cin.ignore();
+
+    while (currentMoney < holidaySum)
+    {
+        string action;
+        getline(cin >> ws, action);
+        double amount;
+        cin >> amount;
+
+        daysCounter++;
+
+        if (action == "spend")
+        {
+            currentMoney -= amount;
+            spentCounter++;
+            if (spentCounter == 5)
+            {
+                break;
+            }
+        }
+        else if (action == "save")
+        {
+            currentMoney += amount;
+            spentCounter = 0;
+        }
+
+        if (currentMoney < 0)
+        {
+            currentMoney = 0;
+        }
+    }
+
+    if (spentCounter == 5)
+    {
+        cout << "You can't save the money." << endl;
+        cout << daysCounter << endl;
+    }
+    else if (currentMoney >= holidaySum)
+    {
+        cout << "You saved the money for " << daysCounter << " days." << endl;
+    }
+    return 0;
+}
