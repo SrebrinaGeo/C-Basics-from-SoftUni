@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int countJudges;
+    cin >> countJudges;
+    cin.ignore();
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    string input;
+    getline(cin, input);
+    double sumGrades = 0;
+    int counter = 0;
+
+
+    while (input != "Finish")
+    {
+        string presentation = input;
+        double sumPresentGrades = 0;
+
+        for (int judge = 1; judge <= countJudges; judge++)
+        {
+            double grade;
+            cin >> grade;
+            sumGrades += grade;
+            sumPresentGrades += grade;
+            counter++;
+        }
+        double avergaeGradePresent = sumPresentGrades / countJudges;
+        cout << presentation << " - " << avergaeGradePresent << "." << endl;
+
+        cin.ignore();
+        getline(cin, input);
+    }
+
+    double averageGrade = sumGrades / counter;
+    cout << "Student's final assessment is " << averageGrade <<  "." << endl;
+}
