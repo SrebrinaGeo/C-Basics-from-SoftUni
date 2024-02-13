@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    int first_num, second_num;
+	  cin >> first_num >> second_num;
+
+    for (int i = first_num; i <= second_num; ++i)
+    {
+        string current_num_str = to_string(i);
+
+        int even_sum = 0;
+        int odd_sum = 0;
+
+        for (size_t j = 0; j < current_num_str.length(); ++j) 
+        {
+            int digit = current_num_str[j] - '0';
+
+            if (j % 2 == 0) 
+            {
+                even_sum += digit;
+            } 
+            else 
+            {
+                odd_sum += digit;
+            }
+        }
+
+        if (even_sum == odd_sum) 
+        {
+            cout << current_num_str << " ";
+        }
+    }
+    return 0;
+}
