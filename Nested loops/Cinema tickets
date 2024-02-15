@@ -1,0 +1,69 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    string movie;
+    getline(cin, movie);
+
+    int countAllTickets = 0;
+    int countStudentTickets = 0;
+    int countStandardTickets = 0;
+    int countKidsTickets = 0;
+    
+    while (movie != "Finish")
+    {
+        int freeSeats;
+        cin >> freeSeats;
+
+        int takenSeats = 0;
+
+        string ticketType;
+        cin >> ticketType;
+
+        while (ticketType != "End")
+        {
+            if (ticketType == "kid")
+            {
+                countKidsTickets++;
+            }
+            else if (ticketType == "standard")
+            {
+                countStandardTickets++;
+            }
+            else if (ticketType == "student")
+            {
+                countStudentTickets++;
+            }
+
+            takenSeats++;
+            countAllTickets++;
+
+            if (takenSeats == freeSeats)
+            {
+                break;
+            }
+
+            cin >> ticketType;
+        }
+        double percentFullHall = (takenSeats * 1.0 / freeSeats) * 100;
+        cout << movie << " - " << percentFullHall << "% full." << endl;
+
+        cin.ignore();
+        getline(cin, movie);
+    }
+
+    cout << "Total tickets: " << countAllTickets << endl;
+    double percentStudentTickets = (countStudentTickets * 1.0 / countAllTickets) * 100;
+    cout << percentStudentTickets << "% student tickets." << endl;
+    double percentStandardTickets = (countStandardTickets * 1.0 / countAllTickets) * 100;
+    cout << percentStandardTickets << "% standard tickets." << endl;
+    double percentKidsTickets = (countKidsTickets * 1.0 / countAllTickets) * 100;
+    cout << percentKidsTickets << "% kids tickets." << endl;
+
+    return 0;
+}
