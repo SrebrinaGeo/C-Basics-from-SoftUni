@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    char lastSector;
+    cin >> lastSector;
+    int rowsFirstSector, seatsOddRow;
+    cin >> rowsFirstSector >> seatsOddRow;
+
+    int totalSeats = 0; 
+
+    for (char sector = 'A'; sector <= lastSector; sector++)
+    {
+        for (int row = 1; row <= rowsFirstSector; row++)
+        {
+            int countSeats;
+            if (row % 2 != 0)
+            {
+                countSeats = seatsOddRow;
+            }
+            else
+            {
+                countSeats = seatsOddRow + 2;
+            }
+
+            for (int seat = 0; seat < countSeats; seat++)
+            {
+                char seatLetter = 'a' + seat;
+                cout << sector << row << seatLetter << endl;
+                totalSeats++;
+            }
+        }
+
+        rowsFirstSector++;
+    }
+
+    cout << totalSeats << endl;
+
+    return 0;
+}
