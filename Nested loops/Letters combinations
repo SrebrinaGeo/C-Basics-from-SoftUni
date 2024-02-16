@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    char first, second, third;
+    cin >> first >> second >> third;
+    
+    int combinationCount = 0;
+
+    for (char a = first; a <= second; a++)
+    {
+        for (char b = first; b <= second; b++)
+        {
+            for (char c = first; c <= second; c++)
+            {
+                if (a != third && b != third && c != third)
+                {
+                    cout << a << b << c << " ";
+                    combinationCount++;
+                }
+            }
+        }
+    }
+
+    cout << combinationCount << endl;
+
+    return 0;
+}
