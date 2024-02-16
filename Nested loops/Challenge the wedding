@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int men, women, tables;
+    cin >> men >> women >> tables;
+    int counter = 0;
+
+    for (int a = 1; a <= men; a++)
+    {
+        for (int b = 1; b <= women; b++)
+        {
+            counter++;
+            cout << "(" << a << " <-> " << b << ")" << " ";
+            if (counter == tables)
+            {
+                break;
+            }
+        }
+        if (counter == tables)
+        {
+            break;
+        }
+    }
+    return 0;
+}
