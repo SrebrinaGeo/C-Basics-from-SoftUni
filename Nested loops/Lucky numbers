@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    int sumLeft = 0;
+    int sumRight = 0;
+
+    for (int a = 1; a <= 9; a++)
+    {
+        for (int b = 1; b <= 9; b++)
+        {
+            for (int c = 1; c <= 9; c++)
+            {
+                for (int d = 1; d <= 9; d++)
+                {
+                    sumLeft = a + b;
+                    sumRight = c + d;
+                    if (n % sumLeft == 0 && sumLeft == sumRight)
+                    {
+                        cout << a << b << c << d << " ";
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
