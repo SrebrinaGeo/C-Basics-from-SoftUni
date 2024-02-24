@@ -1,0 +1,72 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    int people;
+    cin >> people;
+    cin.ignore();
+    string season;
+    getline(cin, season);
+    double totalSum;
+
+
+    if (season == "spring")
+    {
+        if (people <= 5)
+        {
+            totalSum = people * 50;
+        }
+        else
+        {
+            totalSum = people * 48;
+        }
+    }
+    else if (season == "summer")
+    {
+        if (people <= 5)
+        {
+            totalSum = people * 48.5;
+            totalSum *= 0.85;
+        }
+        else
+        {
+            totalSum = people * 45.0;
+            totalSum *= 0.85;
+        }
+    }
+    else if (season == "autumn")
+    {
+        if (people <= 5)
+        {
+            totalSum = people * 60.0;
+        }
+        else
+        {
+            totalSum = people * 49.5;
+        }
+    }
+    else if (season == "winter")
+    {
+        if (people <= 5)
+        {
+            totalSum = people * 86.0;
+            totalSum *= 1.08;
+        }
+        else
+        {
+            totalSum = people * 85.0;
+            totalSum *= 1.08;
+        }
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    cout << totalSum << " leva." << endl;
+
+    return 0;
+}
