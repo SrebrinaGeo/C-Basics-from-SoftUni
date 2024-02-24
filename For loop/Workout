@@ -1,0 +1,37 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    int days;
+    cin >> days;
+    double startKm;
+    cin >> startKm;
+    double current = startKm;
+    double kmRun = current;
+
+    for (int i = 1; i <= days; i++)
+    {
+        int percent;
+        cin >> percent;
+
+        current += (current * percent / 100);
+        kmRun += current;
+    }
+
+    if (kmRun >= 1000)
+    {
+        double diff = kmRun - 1000;
+        cout << "You've done a great job running " << ceil(diff) << " more kilometers!" << endl;
+    }
+    else
+    {
+        double diff = 1000 - kmRun;
+        cout << "Sorry Mrs. Ivanova, you need to run " << ceil(diff) << " more kilometers" << endl;
+    }
+
+    return 0;
+}
