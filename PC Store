@@ -1,0 +1,29 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    
+    double cpuPriceDol, videoCardDol, ramDol;
+    cin >> cpuPriceDol >> videoCardDol >> ramDol;
+    int ramCount;
+    cin >> ramCount;
+    double discountPercentage;
+    cin >> discountPercentage;
+
+    double cpuPriceLv = cpuPriceDol * 1.57;
+    double videoCardLv = videoCardDol * 1.57;
+    double ramLv = ramDol * 1.57;
+    double ramTotalSum = ramLv * ramCount;
+    double cpuLvAfterDiscount = cpuPriceLv - (cpuPriceLv * discountPercentage);
+    double videoCardLvAfterDiscount = videoCardLv - (videoCardLv * discountPercentage);
+
+    double totalSum = cpuLvAfterDiscount + videoCardLvAfterDiscount + ramTotalSum;
+
+    cout << "Money needed - " << totalSum <<  " leva." << endl;
+}
