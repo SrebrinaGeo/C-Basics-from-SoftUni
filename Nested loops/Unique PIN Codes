@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+bool isPrime(int number) 
+{
+    if (number <= 1) 
+    {
+        return false;
+    }
+    for (int i = 2; i * i <= number; ++i) 
+    {
+        if (number % i == 0) 
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    int upperFirst, upperSecond, upperThird;
+    cin >> upperFirst >> upperSecond >> upperThird;
+    int first, second = 0, third; 
+
+    for (first = 1; first <= upperFirst; first++)
+    {
+        for (second = 1; second <= upperSecond; second++)
+        {
+            for (third = 1; third <= upperThird; third++)
+            {
+                if (first % 2 == 0 && third % 2 == 0 && isPrime(second))
+                {
+                   cout << first << " " << second << " " << third << endl;
+                }
+            }
+        }
+    }
+}
