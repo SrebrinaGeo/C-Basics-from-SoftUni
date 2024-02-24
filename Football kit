@@ -1,0 +1,34 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    double tShirtPrice, targetSum;
+    cin >> tShirtPrice >> targetSum;
+
+    double shortsPrice = tShirtPrice * 0.75;
+    double socksPrice = shortsPrice * 0.2;
+    double shoesPrice = 2 * (shortsPrice + tShirtPrice);
+    double sum = tShirtPrice + shortsPrice + socksPrice + shoesPrice;
+    double discountSum = sum * 0.85;
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    
+    if (discountSum >= targetSum)
+    {
+        cout << "Yes, he will earn the world-cup replica ball!" << endl;
+        cout << "His sum is " << discountSum << " lv." << endl;
+    }
+    else
+    {
+        double diff = targetSum - discountSum;
+        cout << "No, he will not earn the world-cup replica ball." << endl;
+        cout << "He needs " << diff << " lv. more." << endl;
+    }
+
+    return 0;
+}
