@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cin >> n;
+
+    for (int a = 1; a <= 9; a++)
+    {
+        for (int b = 9; b >= a; b--)
+        {
+            for (int c = 0; c <= 9; c++)
+            {
+                for (int d = 9; d >= c; d--)
+                {
+                    int sum = a + b + c + d;
+                    int multiply = a * b * c * d;
+
+                    if (sum == multiply && n % 5 == 0)
+                    {
+                        cout << a << b << c << d << endl;
+                        return 0;
+                    }
+                    else if (multiply / sum == 3 && n % 3 == 0)
+                    {
+                        cout << d << c << b << a << endl;
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+    cout << "Nothing found" << endl;
+
+    return 0;
+}
