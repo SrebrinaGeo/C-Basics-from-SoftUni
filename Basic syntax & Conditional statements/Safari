@@ -1,0 +1,43 @@
+#include <iostream>
+#include<string>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    double budget, liters;
+    cin >> budget >> liters;
+    cin.ignore();
+    string day;
+    getline(cin, day);
+
+    double fuelSum = liters * 2.1;
+    double guidePrice = 100.0;
+    double totalSum = fuelSum + guidePrice;
+    
+
+    if (day == "Saturday")
+    {
+       totalSum *= 0.9;
+    }
+    else if (day == "Sunday")
+    {
+       totalSum *= 0.8;
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    if (budget >= totalSum)
+    {
+        double diff = budget - totalSum;
+        cout << "Safari time! Money left: " << diff << " lv." << endl;
+    }
+    else
+    {
+        double diff = totalSum - budget;
+        cout << "Not enough money! Money needed: " << diff << " lv." << endl;
+    }
+
+    return 0;
+}
