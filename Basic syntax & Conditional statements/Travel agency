@@ -1,0 +1,156 @@
+#include <iostream>
+#include<string>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    string city, package, vip;
+    cin >> city >> package >> vip;
+
+    int days;
+    cin >> days;
+
+    double pricePerDay;
+    double totalSum, sumPerDay;
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    if (days < 1)
+    {
+        cout << "Days must be positive number!" << endl;
+    }
+
+    else
+    {
+
+        if (city == "Bansko" || city == "Borovets")
+        {
+            if (package == "withEquipment")
+            {
+                if (vip == "yes")
+                {
+                    double perDay = 100;
+                    double discount = 0.1;
+                    sumPerDay = 100 - (100 * discount);
+                    totalSum = sumPerDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+                else if (vip == "no")
+                {
+                    double perDay = 100;
+                    totalSum = perDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+            }
+            else if (package == "noEquipment")
+            {
+                if (vip == "yes")
+                {
+                    double perDay = 80;
+                    double discount = 0.05;
+                    sumPerDay = 80 - (80 * discount);
+                    totalSum = sumPerDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+                else if (vip == "no")
+                {
+                    double perDay = 80;
+                    totalSum = perDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+            }
+            else
+            {
+                cout << "Invalid input!" << endl;
+            }
+        }
+        else if (city == "Varna" || city == "Burgas")
+        {
+            if (package == "withBreakfast")
+            {
+                if (vip == "yes")
+                {
+                    double perDay = 130;
+                    double discount = 0.12;
+                    sumPerDay = 130 - (130 * discount);
+                    totalSum = sumPerDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+
+                }
+                else if (vip == "no")
+                {
+                    double perDay = 130;
+                    totalSum = perDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+            }
+            else if (package == "noBreakfast")
+            {
+                if (vip == "yes")
+                {
+                    double perDay = 100;
+                    double discount = 0.07;
+                    sumPerDay = 100 - (100 * discount);
+                    totalSum = sumPerDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+                else if (vip == "no")
+                {
+                    double perDay = 100;
+                    totalSum = perDay * days;
+                    if (days > 7)
+                    {
+                        totalSum = sumPerDay * (days - 1);
+                    }
+                    cout << "The price is " << totalSum << "lv! Have a nice time!" << endl;
+                }
+            }
+            else
+            {
+                cout << "Invalid input!" << endl;
+            }
+        }
+        else
+        {
+            cout << "Invalid input!" << endl;
+        }
+
+        if (days < 1)
+        {
+            cout << "Days must be positive number!" << endl;
+        }
+
+    }
+
+    return 0;
+}
