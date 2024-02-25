@@ -1,0 +1,50 @@
+#include <iostream>
+#include<string>
+#include<math.h>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    double profit;
+    cin >> profit;
+    cin.ignore();
+    double totalSum = 0.0;
+
+    string input;
+
+    while (getline(cin, input) && input != "Party!" && totalSum < profit)
+    {
+        string cocktail = input;
+        int cocktailsCount;
+        cin >> cocktailsCount;
+        cin.ignore();
+
+        double priceCocktail = cocktail.length();
+        double sumCurrent = cocktailsCount * priceCocktail;
+
+        if (sumCurrent > 0 && static_cast<int>(sumCurrent) % 2 != 0)
+        {
+           sumCurrent = static_cast<double>(sumCurrent) * 0.75;
+        }
+
+        totalSum += sumCurrent;
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+
+    if (totalSum >= profit)
+    {
+        cout << "Target acquired." << endl;
+    }
+    else
+    {
+        cout << "We need " << profit - totalSum << " leva more." << endl;
+    }
+
+    cout << "Club income - " << totalSum << " leva." << endl;
+
+    return 0;
+}
