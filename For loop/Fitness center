@@ -1,0 +1,66 @@
+#include <iostream>
+#include<string>
+#include<math.h>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int people;
+    cin >> people;
+
+    int workoutCount, productCount;
+    int backCount = 0, chestCount = 0, legsCount = 0, absCount = 0, shakeCount = 0, barCount = 0;
+
+    for (int i = 1; i <= people; i++)
+    {
+        string input;
+        cin >> ws;
+        getline(cin, input);
+
+        if (input == "Back")
+        {
+            backCount++;
+        }
+        else if (input == "Chest")
+        {
+            chestCount++;
+        }
+        else if (input == "Legs")
+        {
+            legsCount++;
+        }
+        else if (input == "Abs")
+        {
+            absCount++;
+        }
+        else if (input == "Protein shake")
+        {
+            shakeCount++;
+        }
+        else if (input == "Protein bar")
+        {
+            barCount++;
+        }
+    }
+
+    workoutCount = backCount + chestCount + legsCount + absCount;
+    productCount = shakeCount + barCount;
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    
+    double percentageWorkout = static_cast<double>(workoutCount) / people * 100.0;
+    double percentageProtein = static_cast<double>(productCount) / people * 100.0;
+
+    cout << backCount << " - back" << endl;
+    cout << chestCount << " - chest" << endl;
+    cout << legsCount << " - legs" << endl;
+    cout << absCount << " - abs" << endl;
+    cout << shakeCount << " - protein shake" << endl;
+    cout << barCount << " - protein bar" << endl;
+    cout << percentageWorkout << "% - work out" << endl;
+    cout << percentageProtein << "% - protein" << endl;
+
+    return 0;
+}
