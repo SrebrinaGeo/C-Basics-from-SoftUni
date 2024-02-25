@@ -1,0 +1,27 @@
+#include <iostream>
+#include<string>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int people;
+    cin >> people;
+    double entranceFee, loungePrice, umbrellaPrice;
+    cin >> entranceFee >> loungePrice >> umbrellaPrice;
+
+    double allEntranceFee, allUmbrellasFee, allLoungeFee;
+
+    allEntranceFee = people * entranceFee;
+    allUmbrellasFee = static_cast<double>(ceil(people * 0.5)) * umbrellaPrice;
+    allLoungeFee = static_cast<double>(ceil(people * 0.75)) * loungePrice;
+ 
+    double totalSum = allEntranceFee + allUmbrellasFee + allLoungeFee;
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    cout << totalSum << " lv." << endl;
+
+    return 0;
+}
