@@ -1,0 +1,54 @@
+#include <iostream>
+#include<string>
+#include <sstream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int controlValue;
+    cin >> controlValue;
+    int counter = 0;
+    string password = "";
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    for (int a = 1; a <= 9; a++)
+    {
+        for (int b = 1; b <= 9; b++)
+        {
+            for (int c = 1; c <= 9; c++)
+            {
+                for (int d = 1; d <= 9; d++)
+                {
+                    if (a < b && c > d && (a * b) + (c * d) == controlValue)
+                    {
+                        if (counter > 0) 
+                        {
+                            cout << " ";
+                        }
+                        cout << a << b << c << d;
+                        counter++;
+
+                        if (counter == 4)
+                        {
+                            password = to_string(a) + to_string(b) + to_string(c) + to_string(d);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (counter >= 4)
+    {
+        cout << endl;
+        cout << "Password: " << password << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "No!" << endl;
+    }
+    return 0;
+}
