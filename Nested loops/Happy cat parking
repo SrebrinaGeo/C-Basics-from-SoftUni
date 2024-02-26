@@ -1,0 +1,52 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int days, hours;
+    cin >> days >> hours;
+    double tax = 0;
+    double total = 0;
+    double sumDay;
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+
+    for (int day = 1; day <= days; day++)
+    {
+        sumDay = 0;
+        for (int hour = 1; hour <= hours; hour++)
+        {
+            if (day % 2 == 0)
+            {
+                if (hour % 2 == 0)
+                {
+                    sumDay += 1;
+                }
+                else
+                {
+                    sumDay += 2.5;
+                }
+            }
+            else
+            {
+                if (hour % 2 == 0)
+                {
+                    sumDay += 1.25;
+                }
+                else
+                {
+                    sumDay += 1;
+                }
+            }
+        } 
+        cout << "Day: " << day << " - " << sumDay << " leva" << endl;
+        total += sumDay;
+    }
+
+    cout << "Total: " << total << " leva" << endl;
+
+    return 0;
+}
