@@ -1,0 +1,45 @@
+#include <iostream>
+#include<string>
+#include<cmath>
+using namespace std;
+
+
+static bool isPrime(int num) 
+{
+    if (num <= 1) 
+    {
+        return false;
+    }
+
+    int sqrtNum = static_cast<int>(sqrt(num));
+    for (int i = 2; i <= sqrtNum; ++i) 
+    {
+        if (num % i == 0) 
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main()
+{
+    int firstStartValue, secondStartValue, firstDiffEnd, secondDiffEnd;
+    cin >> firstStartValue >> secondStartValue >> firstDiffEnd >> secondDiffEnd;
+
+    int firstEndValue = firstStartValue + firstDiffEnd;
+    int secondEndValue = secondStartValue + secondDiffEnd;
+
+    for (int leftNum = firstStartValue; leftNum <= firstEndValue; leftNum++)
+    {
+        for (int rightNum = secondStartValue; rightNum <= secondEndValue; rightNum++)
+        {
+            if (isPrime(leftNum) && isPrime(rightNum))
+            {
+                cout << leftNum << rightNum << endl;
+            }
+        }
+    }
+    return 0;
+}
