@@ -1,0 +1,56 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int bottles;
+    cin >> bottles;
+    string command;
+    int ml = bottles * 750;
+    int counter = 0;
+    int plates = 0;
+    int pots = 0;
+    cin.ignore();
+
+
+    while (ml > 0 && command != "End")
+    {
+        getline(cin, command);
+
+        if (command == "End") 
+        {
+            break;
+        }
+
+        int crockeryCount = stoi(command);
+        counter++;
+
+        if (counter % 3 == 0)
+        {
+            pots += crockeryCount;
+            ml -= crockeryCount * 15;
+        }
+      	else
+        {
+            plates += crockeryCount;
+            ml -= crockeryCount * 5;
+        }
+    }
+    if (ml >= 0)
+    {
+        cout << "Detergent was enough!" << endl;
+        cout << plates << " dishes and " << pots << " pots were washed." << endl;
+        int left = ml;
+        cout << "Leftover detergent " << left << " ml." << endl;
+
+    }
+    else
+    {
+        int diff = abs(ml);
+        cout << "Not enough detergent, " << diff << " ml. more necessary!" << endl;
+    }
+
+    return 0;
+}
