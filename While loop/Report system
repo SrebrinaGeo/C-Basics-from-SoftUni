@@ -1,0 +1,79 @@
+#include <iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int sum = 0;
+    cin >> sum;
+    cin.ignore();
+    string command;
+    int counter = 0;
+    int counterCC = 0;
+    int counterCS = 0;
+    int sumCash = 0;
+    int sumCard = 0;
+    int collectedMoney = 0;
+
+
+    while (collectedMoney < sum && command != "End")
+    {
+        getline(cin, command);
+
+        if (command == "End") 
+        {
+            break;
+        }
+
+        int price = stoi(command);
+        counter++;
+
+        if (counter % 2 == 0)
+        {
+            if (price <= 10)
+            {
+                cout << "Error in transaction!" << endl;
+            }
+            else
+            {
+                counterCC++;
+                sumCard += price;
+                collectedMoney += price;
+                cout << "Product sold!" << endl;
+            }
+        }
+
+        else 
+        {
+            if (price >= 100)
+            {
+                cout << "Error in transaction!" << endl;
+            }
+            else
+            {
+                sumCash += price;
+                counterCS++;
+                collectedMoney += price;
+                cout << "Product sold!" << endl;
+            }
+        }
+    }
+    
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    if (command == "End")
+    {
+        cout << "Failed to collect required money for charity." << endl;
+    }
+
+    else if (collectedMoney >= sum)
+    {
+        double averageCash = static_cast<double>(sumCash) / counterCS;
+        double averageCard = static_cast<double>(sumCard) / counterCC;
+        cout << "Average CS: " << averageCash << endl;
+        cout << "Average CC: " << averageCard << endl;
+    }
+    return 0;
+}
