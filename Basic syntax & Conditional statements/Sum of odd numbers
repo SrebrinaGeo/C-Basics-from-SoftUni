@@ -1,0 +1,23 @@
+#include <iostream>
+#include<string>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int oddsCount;
+    cin >> oddsCount;
+    int sum = 0;
+
+    for (int counter = 0; counter < oddsCount; counter++)
+    {
+        int oddNum = counter * 2 + 1;
+        sum += oddNum;
+
+        cout << oddNum << endl;
+    }
+
+    cout << "Sum: " << sum << endl;
+
+    return 0;
+}
