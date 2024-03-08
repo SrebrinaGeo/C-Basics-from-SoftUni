@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int num;
+    int sum = 0;
+    double average;
+    int count = 0;
+
+    while (count < n)
+    {
+        cin >> num;
+        sum += num;
+        count++;
+    }
+
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    average = double(sum) / n;
+    cout << average << endl;
+
+    return 0;
+}
