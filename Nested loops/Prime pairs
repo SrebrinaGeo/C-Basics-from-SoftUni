@@ -3,7 +3,6 @@
 #include<cmath>
 using namespace std;
 
-
 static bool isPrime(int num) 
 {
     if (num <= 1) 
@@ -19,7 +18,6 @@ static bool isPrime(int num)
             return false;
         }
     }
-
     return true;
 }
 
