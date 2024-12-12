@@ -31,5 +31,4 @@ int main()
 		cout << "extremely fast" << endl;
 	}
 	return 0;
-
 }
