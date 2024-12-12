@@ -72,6 +72,5 @@ int main()
 		
 	cout << "It's " << degrees << " degrees, get your " << outfit << " and " << shoes << "." << endl;
 
-
 	return 0;
 }
