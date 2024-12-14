@@ -38,6 +38,5 @@ int main()
         double diff = totalSum - budget;
         cout << "Not enough money! Money needed: " << diff << " lv." << endl;
     }
-
     return 0;
 }
