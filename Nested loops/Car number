@@ -7,7 +7,6 @@ int main()
     int start, end;
     cin >> start >> end;
 
-
     for (int a = start; a <= end; a++)
     {
         for (int b = start; b <= end; b++)
