@@ -45,4 +45,3 @@ int main()
     cout << "Sum of all prime numbers is: " << sumPrimeNumbers << endl;
     cout << "Sum of all non prime numbers is: " << sumNonPrimeNumbers << endl;
 }
- 
